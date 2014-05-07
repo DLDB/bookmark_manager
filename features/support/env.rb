@@ -7,8 +7,9 @@ require File.join(File.dirname(__FILE__), '..', '..', '/server.rb')
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
+require 'database_cleaner'
 
-Capybara.app = Link
+Capybara.app = Sinatra::Application
 
 class BookmarksWorld
   include Capybara::DSL
@@ -19,3 +20,4 @@ end
 World do
   BookmarksWorld.new
 end
+

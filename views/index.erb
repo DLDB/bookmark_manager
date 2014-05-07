@@ -1,8 +1,12 @@
-<ul>
+<html>
+<head></head>
+<body><ul>
   <% @links.each do |link| %>
     <li><a href="<%= link.url %>"><%= link.title %></a></li>
   <% end %>
 </ul>
+
+<div> <%= no_bookmarks %></div>
 
 <div id="new-link">
 	<form action="/links" method="post">
@@ -12,3 +16,7 @@
 	</form>
 
 </div>
+</body>
+
+
+</html>

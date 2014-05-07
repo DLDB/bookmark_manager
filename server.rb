@@ -22,3 +22,13 @@ post '/links' do
   Link.create(:url => url, :title => title)
   redirect to('/')
 end
+
+# METHODS BELOW
+
+helpers do
+
+def no_bookmarks
+  return "currently no bookmarks" if Link.count == 0  
+end
+
+end
