@@ -17,7 +17,6 @@
   
 # end
 
-Given(/^there are tags$/) do
-  Tag.create(:title => 'ruby')
-
+Given(/^it has a tag$/) do
+  
 end

@@ -4,7 +4,7 @@ Feature: Bookmark_tag
   I want to be able to label my bookmarks with tags
 
 Scenario: when there are tags
-  Given there are tags
+  Given there is one bookmark
+  And it has a tag
   When I am on the homepage
-  And there are bookmarks
-  Then I should see tags attached
+  Then I should see a tag attached to Makers Academy bookmark
