@@ -18,5 +18,10 @@
 # end
 
 Given(/^it has a tag$/) do
-  
+  Tag.create(:text => 'education')
+  expect(Tag.count).to eq 1
 end
+
+# Then(/^I should see a tag attached to Makers Academy bookmark$/) do
+  
+# end
