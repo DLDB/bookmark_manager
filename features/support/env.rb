@@ -20,4 +20,3 @@ end
 World do
   BookmarksWorld.new
 end
-

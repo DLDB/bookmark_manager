@@ -1,10 +1,15 @@
 <html>
-<head></head>
-<body><ul>
-  <% @links.each do |link| %>
-    <li><a href="<%= link.url %>"><%= link.title %></a></li>
-  <% end %>
-</ul>
+  <head>
+    <link href="/stylesheets/background.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+
+    <ul>
+      <% @links.each do |link| %>
+        <li><a href="<%= link.url %>"><%= link.title %></a></li>
+      <% end %>
+    </ul>
 
 <div> <%= no_bookmarks %></div>
 
