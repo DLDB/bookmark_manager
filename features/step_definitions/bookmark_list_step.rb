@@ -1,6 +1,6 @@
 
 Given(/^there are no bookmarks$/) do
-  Link.count == 0
+  expect(Link.count).to eq 0
 end
 
 When (/^I am on the homepage/) do
