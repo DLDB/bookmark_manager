@@ -9,9 +9,13 @@ require './lib/user'
 require_relative 'helpers/application'
 require_relative 'data_mapper_setup'
 
+require_relative './controllers/sessions'
+
 enable :sessions
+
 set :session_secret, 'super_secret'
 use Rack::Flash
+set :partial_template_engine, :erb
 
 get '/' do
   @links = Link.all
@@ -49,21 +53,5 @@ post '/users' do
   else
     flash.now[:errors] = @user.errors.full_messages
     erb :"users/new"
-  end
-end
-
-get '/sessions/new' do
-  erb :"sessions/new"
-end
-
-post '/sessions' do
-  email, password = params[:email], params[:password]
-  user = User.authenticate(email, password)
-  if user
-    session[:user_id] = user.id
-    redirect to('/')
-  else
-    flash[:errors] = ["The email or password is incorrect"]
-    erb :"sessions/new"
   end
 end
